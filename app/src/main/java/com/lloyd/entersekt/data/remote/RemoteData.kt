@@ -3,12 +3,8 @@ package com.lloyd.entersekt.data.remote
 import com.lloyd.entersekt.data.Resource
 import com.lloyd.entersekt.data.error.NETWORK_ERROR
 import com.lloyd.entersekt.data.error.NO_INTERNET_CONNECTION
-import com.lloyd.entersekt.data.models.cards.Card
-import com.lloyd.entersekt.data.models.cards.Cards
 import com.lloyd.entersekt.data.models.cities.Cities
 import com.lloyd.entersekt.data.models.cities.City
-import com.lloyd.entersekt.data.models.sets.Set
-import com.lloyd.entersekt.data.models.sets.Sets
 import com.lloyd.entersekt.data.remote.service.EntersektService
 import com.lloyd.entersekt.utils.NetworkConnectivity
 import retrofit2.Response
@@ -22,8 +18,8 @@ constructor(private val serviceGenerator: ServiceGenerator, private val networkC
     override suspend fun requestCities(): Resource<Cities> {
         val entersektService = serviceGenerator.createService(EntersektService::class.java)
         return when (val response = processCall(entersektService::fetchCities)) {
-            is List<*> -> {
-                Resource.Success(data = Cities(response as List<City>))
+            is Cities -> {
+                Resource.Success(data = response as Cities)
             }
             else -> {
                 Resource.DataError(errorCode = response as Int)

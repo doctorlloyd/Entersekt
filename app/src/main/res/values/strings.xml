@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Entersekt</string>
+    <string name="no_data">No Data</string>
+    <string name="city_details_preview">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+    </string>
+    <string name="city_title_preview">this is the city name</string>
+    <string name="city">List of Cities</string>
+    <string name="no_internet">Please check your internet connection</string>
+    <string name="network_error">Network error, could not get data,please try again!</string>
+    <string name="title_activity_city">City</string>
+    <string name="title_activity_city_details">City Details</string>
+    <string name="image">Image</string>
+</resources>

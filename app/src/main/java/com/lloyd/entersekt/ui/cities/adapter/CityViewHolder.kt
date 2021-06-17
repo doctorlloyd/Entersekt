@@ -10,9 +10,8 @@ import com.squareup.picasso.Picasso
 class CityViewHolder (private val itemBinding: CityLayoutBinding) : RecyclerView.ViewHolder(itemBinding.root) {
 
     fun bind(city: City, cityItemListener: CityItemListener) {
-        itemBinding.tvCaption.text = city.name
         itemBinding.tvName.text = city.name
-//        Picasso.get().load(city.imageUrl).placeholder(R.drawable.ic_launcher_foreground).error(R.drawable.ic_launcher_foreground).into(itemBinding.ivCityItemImage)
+        itemBinding.tvCaption.text = "Number of malls: ${city.malls.size}"
         itemBinding.rlCityItem.setOnClickListener { cityItemListener.onItemSelected(city) }
     }
 }

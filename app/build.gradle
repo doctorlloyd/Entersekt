@@ -89,6 +89,7 @@ dependencies {
 
     //Firebase
     implementation platform("com.google.firebase:firebase-bom:$firebase_bom")
+
     implementation "androidx.multidex:multidex:$multi_dex"
 
 }
